@@ -6,7 +6,9 @@ const msg_2 = document.getElementById('msg-2');
 formData.addEventListener('submit', (e) => {
     e.preventDefault();
     msg_1.textContent = 'Loading.......';
-    fetch(`http://localhost:4000/weather?address=${search.value}`).then((response)=> response.json().then((data)=> {
+    fetch(`http://localhost:4000/weather?address=${search.value}`)
+    .then((response)=> response.json()
+    .then((data)=> {
         if (data.error) {
             msg_1.textContent = data.error;
             msg_2.textContent = '';
